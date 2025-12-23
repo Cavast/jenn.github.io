@@ -1,16 +1,70 @@
+/* Basic body style */
 body {
-  font-family: system-ui, sans-serif;
-  background: #f6f2f0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom, #fef9f9, #ffd9d9);
   text-align: center;
-  padding: 40px;
+  padding: 50px 20px;
+  color: #5a2a2a;
+}
+
+/* Container for everything */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff0f0;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Headings */
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+/* Buttons */
+.buttons {
+  margin: 20px 0;
 }
 
 button {
-  padding: 10px 18px;
-  font-size: 16px;
+  background-color: #ff8c8c;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  margin: 5px;
+  font-size: 1em;
+  border-radius: 12px;
   cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
 }
 
+button:hover {
+  transform: scale(1.05);
+  background-color: #ff5c5c;
+}
+
+/* Letters */
+.letter {
+  margin-top: 20px;
+  font-size: 1.2em;
+  line-height: 1.6;
+  padding: 15px;
+  background: #ffecec;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+/* Hidden letters */
 .hidden {
   display: none;
+}
+
+/* Fade-in effect */
+.fade-in {
+  display: block;
+  opacity: 1;
 }

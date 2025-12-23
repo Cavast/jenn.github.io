@@ -6,39 +6,47 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-	
+
   <script>
-    const pass = prompt("Your nickname for me:");
+    const pass = prompt("Your nickname for me?");
     if (pass !== "peanut") {
-      document.body.innerHTML = "❤️";
+      document.body.innerHTML = "<h1>❤️</h1>";
     }
   </script>
 
-  <h1>Hi honeybunny</h1>
-  <p>I hope you enjoy this.</p>
+  <div class="container">
+    <h1>Hi honeybunny</h1>
+    <p>I hope you enjoy this little surprise.</p>
 
-  <!-- Buttons -->
-  <button onclick="openLetter('today')">Open today</button>
-  <button onclick="openLetter('eve')">Open on Christmas Eve</button>
-  <button onclick="openLetter('day')">Open on Christmas Day</button>
+    <!-- Buttons -->
+    <div class="buttons">
+      <button onclick="openLetter('today')">Open today</button>
+      <button onclick="openLetter('eve')">Open on Christmas Eve</button>
+      <button onclick="openLetter('day')">Open on Christmas Day</button>
+    </div>
 
-  <!-- Hidden letters -->
-  <div id="today" class="hidden">
-    <p>I know being apart is hard, but you mean everything to me.</p>
-  </div>
+    <!-- Hidden letters -->
+    <div id="today" class="letter hidden">
+      <p>I know being apart is hard, but you mean everything to me.</p>
+    </div>
 
-  <div id="eve" class="hidden">
-    <p>Christmas Eve! I’m thinking of you and sending all my love.</p>
-  </div>
+    <div id="eve" class="letter hidden">
+      <p>Christmas Eve! I’m thinking of you and sending all my love. 🎄❤️</p>
+    </div>
 
-  <div id="day" class="hidden">
-    <p>Merry Christmas! I can’t wait until we’re together again ❤️</p>
+    <div id="day" class="letter hidden">
+      <p>Merry Christmas! I can’t wait until we’re together again ❤️✨</p>
+    </div>
   </div>
 
   <!-- Script -->
   <script>
     function openLetter(id) {
-      document.getElementById(id).classList.remove("hidden");
+      const letter = document.getElementById(id);
+      if (letter.classList.contains("hidden")) {
+        letter.classList.remove("hidden");
+        letter.classList.add("fade-in");
+      }
     }
   </script>
 
