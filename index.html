@@ -1,9 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For You ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 <body>
 
   <!-- Background music -->
-  <audio id="bgMusic" autoplay loop>
-    <source src="music.mp3" type="audio/mpeg">
-  </audio>
+  <audio id="bgMusic" loop></audio>
 
   <script>
     const pass = prompt("Your nickname for me?");
@@ -11,12 +16,6 @@
       document.body.innerHTML = "<h1>❤️</h1>";
     }
   </script>
-
-  <!-- Floating hearts -->
-  <div class="hearts"></div>
-
-  <!-- Falling snow -->
-  <div class="snow"></div>
 
   <div class="container">
     <h1>Hi honeybunny</h1>
@@ -48,10 +47,29 @@
     function openLetter(id) {
       const letter = document.getElementById(id);
       if (letter.classList.contains("hidden")) {
+        // Show letter
         letter.classList.remove("hidden");
         letter.classList.add("fade-in");
+
+        // Change background & play music
+        const body = document.body;
+        const music = document.getElementById("bgMusic");
+
+        if(id === 'today') {
+          body.style.backgroundImage = "url('background_today.png')";
+          music.src = "music_today.mp3";
+        } else if(id === 'eve') {
+          body.style.backgroundImage = "url('background_eve.png')";
+          music.src = "music_eve.mp3";
+        } else if(id === 'day') {
+          body.style.backgroundImage = "url('background_day.png')";
+          music.src = "music_day.mp3";
+        }
+
+        music.play();
       }
     }
   </script>
 
 </body>
+</html>
