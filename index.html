@@ -7,28 +7,38 @@
 </head>
 <body>
 	
-	<script>
-  const pass = prompt("Password?");
-  if (pass !== "your-secret-word") {
-    document.body.innerHTML = "❤️";
-  }
-	</script>
+  <script>
+    const pass = prompt("Your nickname for me:");
+    if (pass !== "peanut") {
+      document.body.innerHTML = "❤️";
+    }
+  </script>
 
+  <h1>Hi honeybunny</h1>
+  <p>I hope you enjoy this.</p>
 
-  <h1>Hi love</h1>
-  <p>This is just for you.</p>
+  <!-- Buttons -->
+  <button onclick="openLetter('today')">Open today</button>
+  <button onclick="openLetter('eve')">Open on Christmas Eve</button>
+  <button onclick="openLetter('day')">Open on Christmas Day</button>
 
-  <button onclick="openLetter()">Open when you miss me</button>
-
-  <div id="letter" class="hidden">
-    <p>
-      I know being apart is hard, but you mean everything to me.
-    </p>
+  <!-- Hidden letters -->
+  <div id="today" class="hidden">
+    <p>I know being apart is hard, but you mean everything to me.</p>
   </div>
 
+  <div id="eve" class="hidden">
+    <p>Christmas Eve! I’m thinking of you and sending all my love.</p>
+  </div>
+
+  <div id="day" class="hidden">
+    <p>Merry Christmas! I can’t wait until we’re together again ❤️</p>
+  </div>
+
+  <!-- Script -->
   <script>
-    function openLetter() {
-      document.getElementById("letter").classList.remove("hidden");
+    function openLetter(id) {
+      document.getElementById(id).classList.remove("hidden");
     }
   </script>
 
