@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For You ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Hi love</h1>
+  <p>This is just for you.</p>
+
+  <button onclick="openLetter()">Open when you miss me</button>
+
+  <div id="letter" class="hidden">
+    <p>
+      I know being apart is hard, but you mean everything to me.
+    </p>
+  </div>
+
+  <script>
+    function openLetter() {
+      document.getElementById("letter").classList.remove("hidden");
+    }
+  </script>
+
+</body>
+</html>
