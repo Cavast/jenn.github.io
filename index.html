@@ -7,6 +7,9 @@
 </head>
 <body>
 
+  <!-- Top-right back button -->
+  <button class="top-right-btn" onclick="resetScreen()">Back</button>
+
   <!-- Background music -->
   <audio id="bgMusic" loop></audio>
 
@@ -68,6 +71,20 @@
 
         music.play();
       }
+    }
+
+    function resetScreen() {
+      // Reset to dark purple background and stop music
+      document.body.style.backgroundImage = "";
+      document.body.style.backgroundColor = "#4B0082";
+      const music = document.getElementById("bgMusic");
+      music.pause();
+      music.currentTime = 0;
+
+      // Hide letters again
+      document.querySelectorAll('.letter').forEach(letter => {
+        letter.classList.add('hidden');
+      });
     }
   </script>
 

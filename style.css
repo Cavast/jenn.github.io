@@ -1,28 +1,33 @@
-/* Plain purple background initially */
+/* Dark purple background initially */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
   text-align: center;
-  background-color: purple;
+  background-color: #4B0082; /* Dark purple */
   background-size: cover;
   background-position: center;
   color: white;
   min-height: 100vh;
-  transition: background-image 1s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 1s ease-in-out;
 }
 
 /* Container for letters and buttons */
 .container {
   max-width: 600px;
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(0, 0, 0, 0.8); /* Black with transparency */
   padding: 30px;
   border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  color: white;
+  text-align: center;
   position: relative;
-  top: 50px;
-  color: #5a2a2a;
+  top: 0;
+  transform: translateY(0);
 }
 
 /* Buttons */
@@ -31,7 +36,7 @@ body {
 }
 
 button {
-  background-color: #ff8c8c;
+  background-color: #4B0082; /* Match dark purple background */
   color: white;
   border: none;
   padding: 12px 20px;
@@ -39,12 +44,32 @@ button {
   font-size: 1em;
   border-radius: 12px;
   cursor: pointer;
-  transition: transform 0.2s, background-color 0.2s;
+  transition: transform 0.2s, opacity 0.2s;
 }
 
 button:hover {
   transform: scale(1.05);
-  background-color: #ff5c5c;
+  opacity: 0.8;
+}
+
+/* Top-right fixed back button */
+.top-right-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #4B0082;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  z-index: 1000;
+  transition: opacity 0.2s;
+}
+
+.top-right-btn:hover {
+  opacity: 0.8;
 }
 
 /* Letters */
@@ -53,9 +78,9 @@ button:hover {
   font-size: 1.2em;
   line-height: 1.6;
   padding: 15px;
-  background: rgba(255, 236, 236, 0.9);
+  background: rgba(0, 0, 0, 0.7); /* Black with transparency */
   border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   opacity: 0;
   transition: opacity 1s ease-in;
 }
